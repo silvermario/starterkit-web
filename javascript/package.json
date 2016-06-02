@@ -1,0 +1,27 @@
+{
+  "name": "starterkit_js",
+  "version": "1.0.0",
+  "description": "Starterkit js homework",
+  "main": "index.js",
+  "engine": "node >= 0.10.0",
+  "dependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-chrome-launcher": "^1.0.1",
+    "phantomjs-prebuilt": "^2.1.7",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma": "^0.13.22"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.0.0",
+    "gulp-livereload": "^3.8.1",
+    "http-server": "^0.9.0"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js",
+    "start": "http-server -a localhost -p 8000 -c-1"
+  },
+  "author": "Mariusz Kopec",
+  "license": "ISC"
+}
