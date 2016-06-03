@@ -9,15 +9,13 @@ var carsData = (function() {
         errorHandler = function(status) {
             carsElement.innerHTML = "<p>Could not resolve given url.</p>\n" +
                 "<p>" + status + " error</p>\n";
-        };
-
-    return {
-        getCars: function(getUrl) {
+        },
+        dataWrapper = "",
+        getData = function(callback) {
             var url = 'data/cars.json', //getUrl, //'data/cars.json',
-                xhr = new XMLHttpRequest(),
-                dataWrapper;
+                xhr = new XMLHttpRequest();
 
-            xhr.open('get', url, true);
+
             xhr.onreadystatechange = function() {
                 var status;
                 var data;
@@ -28,14 +26,25 @@ var carsData = (function() {
                         data = JSON.parse(xhr.responseText);
                         successHandler && successHandler(data);
                         //dataReturner(data);
+                        callback(data);
                         return data;
                     } else {
                         errorHandler && errorHandler(status);
                     }
                 }
             };
+            xhr.open('get', url, true);
             xhr.send();
+            return xhr.onreadystatechange();
             //return 'xx';
+        }
+
+    return {
+        getCars: function() {
+            return getData(function(data){
+              console.log(data); // Object {data: Array[5]}
+              //return data;
+            })
         }
 
     }
