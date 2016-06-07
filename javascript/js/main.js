@@ -5,11 +5,12 @@
 
 
 // for testing
-navigation.showXMLHttpRequest()
+//navigation.showXMLHttpRequest()
+//calculator.init;
 
 
 carsData.getCars.then(function(response){
-  console.log(response.data[0].img);
+  //console.log(response.data[0].img);
   carsToHtml.printCars(response);
 }, function(error) {
   console.error("Failed!", error);

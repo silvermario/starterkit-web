@@ -2,10 +2,10 @@ var gulp = require('gulp'); 
 //var scssPlugin = require('gulp-sass');
 var connect = require('gulp-connect');
  
-gulp.task('myStyles', function () {
+gulp.task('reload', function () {
     gulp.src('')
         //.pipe(scssPlugin())
-        .pipe(gulp.dest(''))
+        //.pipe(gulp.dest(''))
         .pipe(connect.reload());
 });
 
@@ -17,7 +17,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watchMyStyles', function() {
-    gulp.watch(['index.html','js/*.js'], ['myStyles']);
+    gulp.watch(['index.html','js/*.js', 'css/*.css'], ['reload']);
 });
 
 gulp.task('watch', ['watchMyStyles', 'connect']);

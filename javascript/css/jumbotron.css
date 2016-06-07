@@ -3,3 +3,11 @@ body {
   padding-top: 50px;
   padding-bottom: 20px;
 }
+#car-image{
+    margin: 0 auto;
+}
+
+.progress-bar {
+    padding-left: 20px;
+    text-align: left;
+}
